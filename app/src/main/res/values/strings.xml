@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">AutoDetectOTPAndroid</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_otp">OtpActivity</string>
+    <string name="please_type_the_verification_code_sent_to_n_9xxxxxxx19">Please type the verification code sent to\n</string>
+    <string name="verification_code">Verification Code</string>
+    <string name="show_error">SHOW ERROR</string>
+    <string name="show_success">SHOW Success</string>
+</resources>
