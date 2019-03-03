@@ -23,6 +23,26 @@
 
     <include layout="@layout/content_main" />
 
+    <TextView
+        android:id="@+id/message"
+        android:textColor="@color/black"
+        android:layout_margin="20dp"
+        android:layout_gravity="bottom|center_horizontal"
+        android:textSize="18dp"
+        android:paddingBottom="200dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/copy_message"
+        android:layout_width="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_marginLeft="20dp"
+        android:layout_marginBottom="20dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_buttons"
+        android:text="  Copy Test Message  " />
+
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"
         android:layout_width="wrap_content"

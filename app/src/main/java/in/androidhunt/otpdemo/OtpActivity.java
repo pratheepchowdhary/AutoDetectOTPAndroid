@@ -1,5 +1,8 @@
 package in.androidhunt.otpdemo;
 
+import android.content.ClipData;
+import android.content.ClipboardManager;
+import android.content.Context;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.CountDownTimer;
@@ -100,13 +103,21 @@ public class OtpActivity extends AppCompatActivity {
 
           @Override
           public void smsCallback(String sms) {
-              Toast.makeText(OtpActivity.this,"The OTP is " , Toast.LENGTH_SHORT).show();
               if(sms.contains(":") && sms.contains(".")) {
                   String otp = sms.substring( sms.indexOf(":")+1 , sms.indexOf(".") ).trim();
                   otpTextView.setOTP(otp);
                   Toast.makeText(OtpActivity.this,"The OTP is " + otp, Toast.LENGTH_SHORT).show();
-
               }
+          }
+      });
+      findViewById(R.id.fab).setOnClickListener(new View.OnClickListener() {
+          @Override
+          public void onClick(View v) {
+              ClipboardManager clipboard = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
+              ClipData clip = ClipData.newPlainText("label", AutoDetectOTP.getHashCode(OtpActivity.this));
+              if (clipboard == null) return;
+              clipboard.setPrimaryClip(clip);
+              Toast.makeText(OtpActivity.this,AutoDetectOTP.getHashCode(OtpActivity.this), Toast.LENGTH_SHORT).show();
           }
       });
     }

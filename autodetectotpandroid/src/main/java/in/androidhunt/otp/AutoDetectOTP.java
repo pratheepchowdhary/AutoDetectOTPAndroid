@@ -36,13 +36,6 @@ public class AutoDetectOTP {
     private BroadcastReceiver chargerReceiver;
     private AppCompatActivity appCompatActivity;
     private IntentFilter intentFilter;
-
-    public AutoDetectOTP(Context context, final Callback callback) {
-        this.appCompatActivity = (AppCompatActivity) context;
-        this.context = appCompatActivity.getApplicationContext();
-
-    }
-
     public AutoDetectOTP(Context context) {
         this.appCompatActivity = (AppCompatActivity) context;
         this.context = appCompatActivity.getApplicationContext();
@@ -120,6 +113,7 @@ public class AutoDetectOTP {
     }
 
     public void startSmsRetriver(final SmsCallback smsCallback) {
+        registerReceiver();
         this.smsCallback = smsCallback;
         // Get an instance of SmsRetrieverClient, used to start listening for a matching
 // SMS message.
@@ -129,7 +123,6 @@ public class AutoDetectOTP {
 // (5 minutes). The matching SMS message will be sent via a Broadcast Intent with
 // action SmsRetriever#SMS_RETRIEVED_ACTION.
         Task<Void> task = client.startSmsRetriever();
-
 // Listen for success/failure of the start Task. If in a background thread, this
 // can be made blocking using Tasks.await(task, [timeout]);
         task.addOnSuccessListener(new OnSuccessListener<Void>() {
@@ -137,7 +130,6 @@ public class AutoDetectOTP {
             public void onSuccess(Void aVoid) {
                 Log.e("SMSRE","success");
                 smsCallback.connectionSuccess(aVoid);
-                registerReceiver();
             }
         });
 
@@ -196,26 +188,27 @@ public class AutoDetectOTP {
         catch (IllegalArgumentException e){
             e.printStackTrace();
         }
-
-      ;
     }
 
     ;
 
     public interface Callback {
         void connectionfailed(ConnectionResult connectionResult);
-
         void connectionSuspend(int i);
-
         void connectionSuccess(Bundle bundle);
     }
 
     public interface SmsCallback {
         void connectionfailed();
-
         void connectionSuccess(Void aVoid);
-
         void smsCallback(String sms);
     }
+    public static String getHashCode(Context context){
+        AppSignatureHelper appSignature = new AppSignatureHelper(context);
+        Log.e(" getAppSignatures ",""+appSignature.getAppSignatures());
+        return appSignature.getAppSignatures().get(0);
+
+    }
+
 
 }
