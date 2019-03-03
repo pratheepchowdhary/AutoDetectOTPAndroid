@@ -6,15 +6,6 @@ AutoDetectOTPAndroid
 
 [AutoDetectOTPAndroid](https://www.androidhunt.in)  is an Android libary to Integrate Auto Detect OTP With Out Sms Permissions Required To Your Android Appliaction Essaily With less Stuff.
 
-<div align="center">
-        <img width="40%" src="https://github.com/pratheepchowdhary/AutoDetectOTPAndroid/blob/master/screenshots/Screenshot_1.png" alt="Obtain the user's phone number" title="Obtain the user's phone number"</img>
-        <img height="0" width="8px">
-        <img width="40%" src="https://github.com/pratheepchowdhary/AutoDetectOTPAndroid/blob/master/screenshots/Screenshot_2.png" alt="" title=""></img>
-        <img height="0" width="8px">
-         <img width="40%" src="https://github.com/pratheepchowdhary/AutoDetectOTPAndroid/blob/master/screenshots/Screenshot_3.png" alt="Verification" title="OTP Verification"></img>
-</div>
-
-
 
 Usage
 -----
@@ -46,8 +37,43 @@ dependencies {
       // above string like this "ynfd/rIwy/+"
 
 ```
+<div align="center">
+        <img width="40%" src="https://github.com/pratheepchowdhary/AutoDetectOTPAndroid/blob/master/screenshots/Screenshot_1.png" alt="Obtain the user's phone number" title="Obtain the user's phone number"</img>
+</div>
 
-**3.** Auto Detect OTP Usage
+**3.** Obtain the user's phone number Using hint picker to prompt
+```java
+        AutoDetectOTP autoDetectOTP=new AutoDetectOTP(this);
+        //To display List Of Phone No Linked with Google Account  By showing Dialog as Shown Above
+        autoDetectOTP.requestPhoneNoHint();
+
+        //we can get phone number onActivity Result when User Picked From prompt
+
+
+           @Override
+           protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+               super.onActivityResult(requestCode, resultCode, data);
+               if (requestCode == AutoDetectOTP.RC_HINT) {
+                   if (resultCode == RESULT_OK) {
+                   String phoneNo=autoDetectOTP.getPhoneNo(data);
+
+                   }
+                   else {
+                   //nothing selected
+                   }
+
+               }
+           }
+
+```
+```
+<div align="center">
+        <img width="40%" src="https://github.com/pratheepchowdhary/AutoDetectOTPAndroid/blob/master/screenshots/Screenshot_2.png" alt="" title=""></img>
+        <img height="0" width="8px">
+         <img width="40%" src="https://github.com/pratheepchowdhary/AutoDetectOTPAndroid/blob/master/screenshots/Screenshot_3.png" alt="Verification" title="OTP Verification"></img>
+</div>
+
+**4.** Auto Detect OTP Usage
 ```java
         AutoDetectOTP autoDetectOTP=new AutoDetectOTP(this);
         autoDetectOTP.startSmsRetriver(new AutoDetectOTP.SmsCallback() {
