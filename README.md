@@ -18,7 +18,7 @@ dependencies {
 ```
 **2.** Example Message Format and Generating Hash Code
 ```java
-       //Example Message
+       //Example Message Format
 
         <#>Your AndroidHunt OTP is: 8686. ynfd/rIwy/+
 
