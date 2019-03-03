@@ -41,7 +41,7 @@ dependencies {
         <img width="30%" src="https://github.com/pratheepchowdhary/AutoDetectOTPAndroid/blob/master/screenshots/Screenshot_1.png" alt="Obtain the user's phone number" title="Obtain the user's phone number"</img>
 </div>
 
-**3.** Obtain the user's phone number Using hint picker to prompt
+**3.** Obtain the user's phone number Using hint picker with prompt
 ```java
         AutoDetectOTP autoDetectOTP=new AutoDetectOTP(this);
         //To display List Of Phone No Linked with Google Account  By showing Dialog as Shown Above
