@@ -27,25 +27,27 @@ dependencies {
 ```
 **2.** Example Message Format and Generating Hash Code
 ```java
+       //Example Message
+
         <#>Your AndroidHunt OTP is: 8686. ynfd/rIwy/+
 
         ynfd/rIwy/+  is the hash code of your Application
 
 ```
 ```java
-      //There are Two  Ways To Genearate Hash Code One Is By Using Command Line
-      keytool -exportcert -alias YOUR_KEYSTORE_ALIAS -keystore YOUR_KEYSTORE_FILE | xxd -p | tr -d "[:space:]" | echo -n com.example.myapp `cat` | sha256sum | tr -d "[:space:]-" | xxd -r -p | base64 | cut -c1-11
+       //There are Two  Ways To Genearate Hash Code One Is By Using Command Line
+        keytool -exportcert -alias YOUR_KEYSTORE_ALIAS -keystore YOUR_KEYSTORE_FILE | xxd -p | tr -d "[:space:]" | echo -n com.example.myapp `cat` | sha256sum | tr -d "[:space:]-" | xxd -r -p | base64 | cut -c1-11
 
 ```
 ```java
       //Other Way  By Doing Programatically Inside The Application.
       //Here You get Hash code by Using With Our Library
-    String hashCode = AutoDetectOTP.getHashCode(this);
-    // above string like this "ynfd/rIwy/+"
+      String hashCode = AutoDetectOTP.getHashCode(this);
+      // above string like this "ynfd/rIwy/+"
 
 ```
 
-**3.** Usage
+**3.** Auto Detect OTP Usage
 ```java
         AutoDetectOTP autoDetectOTP=new AutoDetectOTP(this);
         autoDetectOTP.startSmsRetriver(new AutoDetectOTP.SmsCallback() {
@@ -75,8 +77,6 @@ dependencies {
 
 ```
 ```
-
-
 Licences
 --------
     Copyright 2019 Pratheep Chowdhary.
@@ -92,3 +92,4 @@ Licences
     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
     See the License for the specific language governing permissions and
     limitations under the License.
+```
