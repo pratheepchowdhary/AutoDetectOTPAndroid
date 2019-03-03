@@ -38,7 +38,7 @@ dependencies {
 
 ```
 <div align="center">
-        <img width="40%" src="https://github.com/pratheepchowdhary/AutoDetectOTPAndroid/blob/master/screenshots/Screenshot_1.png" alt="Obtain the user's phone number" title="Obtain the user's phone number"</img>
+        <img width="30%" src="https://github.com/pratheepchowdhary/AutoDetectOTPAndroid/blob/master/screenshots/Screenshot_1.png" alt="Obtain the user's phone number" title="Obtain the user's phone number"</img>
 </div>
 
 **3.** Obtain the user's phone number Using hint picker to prompt
@@ -48,8 +48,6 @@ dependencies {
         autoDetectOTP.requestPhoneNoHint();
 
         //we can get phone number onActivity Result when User Picked From prompt
-
-
            @Override
            protected void onActivityResult(int requestCode, int resultCode, Intent data) {
                super.onActivityResult(requestCode, resultCode, data);
@@ -65,7 +63,6 @@ dependencies {
                }
            }
 
-```
 ```
 <div align="center">
         <img width="40%" src="https://github.com/pratheepchowdhary/AutoDetectOTPAndroid/blob/master/screenshots/Screenshot_2.png" alt="" title=""></img>
