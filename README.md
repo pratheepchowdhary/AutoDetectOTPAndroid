@@ -38,7 +38,7 @@ dependencies {
 
 ```
 <div align="center">
-        <img width="30%" src="https://github.com/pratheepchowdhary/AutoDetectOTPAndroid/blob/master/screenshots/Screenshot_1.png" alt="Obtain the user's phone number" title="Obtain the user's phone number"</img>
+        <img width="30%" src="https://raw.githubusercontent.com/pratheepchowdhary/AutoDetectOTPAndroid/master/screenshots/Screenshot_1.png" alt="Obtain the user's phone number" title="Obtain the user's phone number"</img>
 </div>
 
 **3.** Obtain the user's phone number Using hint picker with prompt
@@ -65,9 +65,9 @@ dependencies {
 
 ```
 <div align="center">
-        <img width="40%" src="https://github.com/pratheepchowdhary/AutoDetectOTPAndroid/blob/master/screenshots/Screenshot_2.png" alt="" title=""></img>
+        <img width="40%" src="https://raw.githubusercontent.com/pratheepchowdhary/AutoDetectOTPAndroid/master/screenshots/Screenshot_2.png" alt="" title=""></img>
         <img height="0" width="8px">
-         <img width="40%" src="https://github.com/pratheepchowdhary/AutoDetectOTPAndroid/blob/master/screenshots/Screenshot_3.png" alt="Verification" title="OTP Verification"></img>
+         <img width="40%" src="https://raw.githubusercontent.com/pratheepchowdhary/AutoDetectOTPAndroid/master/screenshots/Screenshot_3.png" alt="Verification" title="OTP Verification"></img>
 </div>
 
 **4.** Auto Detect OTP Usage
