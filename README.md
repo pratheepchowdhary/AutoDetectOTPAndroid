@@ -104,7 +104,7 @@ dependencies {
                   }
               });
               -----------------
-              // Finally Stop Sms Retriver BY Calling  autoDetectOTP.stopSmsReciever() On Stop As  Shown Below
+              // Finally Stop Sms Retriver BY Calling  autoDetectOTP.stopSmsReciever() On OnDestroy As  Shown Below
                @Override
                   protected void onDestroy() {
                       super.onDestroy();
