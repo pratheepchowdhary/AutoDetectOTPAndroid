@@ -106,8 +106,8 @@ dependencies {
               -----------------
               // Finally Stop Sms Retriver BY Calling  autoDetectOTP.stopSmsReciever() On Stop As  Shown Below
                @Override
-                  protected void onStop() {
-                      super.onStop();
+                  protected void onDestroy() {
+                      super.onDestroy();
                       autoDetectOTP.stopSmsReciever();
                   }
 
